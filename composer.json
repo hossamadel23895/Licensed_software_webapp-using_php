@@ -1,0 +1,17 @@
+{
+  "name": "vendor/project",
+  "description": "simple project",
+  "license": "MIT",
+  "require": {
+    "illuminate/database": "*",
+    "chillerlan/php-qrcode": "*"
+    },
+  "autoload": {
+    "classmap": [
+      "model"
+    ],
+    "files": [
+      "config.php"
+    ]
+  }
+}
