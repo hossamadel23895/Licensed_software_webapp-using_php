@@ -1,11 +1,6 @@
 body {
   font-family: monospace;
   font-size: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  padding: 0;
   background-color: #42356d;
 }
 
@@ -21,7 +16,6 @@ body {
   box-shadow: 10px 19px 15px darkgrey;
   position: absolute;
   left: 20%;
-  top: 15%;
 }
 
 img {
@@ -64,7 +58,7 @@ input {
   );
   position: relative;
   left: 60%;
-  top: 80px;
+  top: 40px;
   width: 232px;
   height: 237px;
   border-radius: 120px;
@@ -107,6 +101,8 @@ label {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: 600;
+  width: 100%;
+  text-align: center;
 }
 
 .card-info input {
@@ -161,4 +157,9 @@ form {
 #buttons_div {
   display: flex;
   justify-content: space-evenly;
+}
+
+#update_label {
+  text-align: center;
+  font-weight: 600;
 }

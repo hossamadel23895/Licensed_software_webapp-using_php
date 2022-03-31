@@ -16,14 +16,16 @@
       <!-- Email to be fixed -->
       <form id="form" action="profile.php" method="POST">
         <div>
-          <label for="old_email">current Email:</label>
           <label name="old_email" type="text" id="old_email"
             ><?php echo($user->show_user_email($_SESSION["user_id"])); ?>
           </label>
           <br />
         </div>
+        <div id="update_label">
+          <label>Update Email</label>
+        </div>
         <div>
-          <label for="email ">new email</label>
+          <label for="email ">New email</label>
           <input
             name="email"
             type="text "
@@ -31,9 +33,11 @@
             placeholder="enter your new email"
           /><br />
         </div>
-    <br />
+        <div id="update_label">
+          <label>Update password</label>
+        </div>
         <div>
-          <label for="old_password">current password:</label>
+          <label for="old_password">Current password:</label>
           <input
             name="old_password"
             type="password"
@@ -42,11 +46,11 @@
           /><br />
         </div>
         <div>
-          <label for="password">new password</label>
+          <label for="password">New password</label>
           <input name="password" type="password" id="passwordNew" />
         </div>
         <div>
-          <label for="confirm_new_password">confirm new password</label>
+          <label for="confirm_new_password">Confirm new password</label>
           <input
             name="confirm_new_password"
             type="password"
@@ -55,7 +59,7 @@
         </div>
        <div id="buttons_div">
         <button id="submit" type="submit" name="submit">edit</button>
-        <button id="back_btn" onclick="window.location.href='login.php'">Back</button>
+        <button id="back_btn" type="button" onclick="window.location.href='login.php'">Back</button>
        </div>
         
         <?php

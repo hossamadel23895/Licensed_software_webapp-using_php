@@ -26,15 +26,14 @@ if(isset($_POST["logout_request"])){
 
 // if user have a cookie
 if (isset($_COOKIE["hashed_token"])) {
-    // Updating the cookie
     $login_user_id = $login_token->get_user_id_using_hashed_token($_COOKIE["hashed_token"]);
+    // Updating the cookie
     $new_hashed_token = Utility::randomkey(127);
     $login_token->update_token($login_user_id, $new_hashed_token);
     setcookie("hashed_token", $new_hashed_token, time() + (10 * 365 * 24 * 60 * 60));
 
     // Sending the user to his download page using cookie to get id
-    $token_user_id = $login_token->get_user_id_using_hashed_token($_COOKIE["hashed_token"]);
-    $current_key = $login_order->get_key($token_user_id);
+    $current_key = $login_order->get_key($login_user_id);
     $url = "download.php?key=$current_key";
     header("Location:$url");
 
@@ -70,7 +69,7 @@ if (isset($_COOKIE["hashed_token"])) {
                 $url = "download.php?key=$current_key";
                 header("Location:$url");
             } else {
-                $login_error = "Username or password are incorrect, please try again.";
+                $login_error = "Email or password are incorrect, please try again.";
             }
         }
     }
